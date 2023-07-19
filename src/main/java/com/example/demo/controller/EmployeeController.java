@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entity.Employee;
@@ -45,8 +44,13 @@ public class EmployeeController {
 	}
 	
 	@DeleteMapping("/deleteEmp")
-	public String deleteEMployee(@RequestParam int id) {
-		return service.deleteEMp(id);
+	public String deleteEmployee(@RequestParam int id) {
+		return service.deleteEmp(id);
+	}
+	
+	@DeleteMapping("/deleteAllEmp")
+	public String deleteEmployee() {
+		return service.deleteAllEmp();
 	}
 	
 
